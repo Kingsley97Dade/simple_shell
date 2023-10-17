@@ -12,4 +12,4 @@
 #include <limits.h>
 #include <fcntl.h>
 
-#endif
+#endif /* MAIN_H */
