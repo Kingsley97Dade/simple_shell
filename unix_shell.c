@@ -1,10 +1,12 @@
 #include "main.h"
+
 /**
- * interactive_func - A function to check if our shell is interactive
+ * main - A function to check if our shell is interactive
  *
  * Return: 0 on success
  */
-int interactive_func(void)
+
+int main(void)
 {
 	if (isatty(STDIN_FILENO) == 1) /* isatty func to see if shell is interactive*/
 		myshell_works(); /* lets check if our shell is interactive*/
@@ -16,11 +18,13 @@ int interactive_func(void)
 
 
 #include "main.h"
+
 /**
  * myshell_works - A function to print a prompt for the shell to work
  *
  * Return: void
  */
+
 void myshell_works(void)
 {
 	char *line;
@@ -28,17 +32,10 @@ void myshell_works(void)
 	int status = -1;
 
 	do {
-		write(STDOUT_FILENO, "kh$ ", 14);
+		write(STDOUT_FILENO, "kh$ ", 4);
 		line = scan_line();
 		args = divide_line(line);
 		status = execute_args(args);
-
-		if (status == -1)
-		{
-			free(line);
-			free(args);
-			break;
-		}
 		free(line);
 		free(args);
 
@@ -47,11 +44,13 @@ void myshell_works(void)
 
 
 #include "main.h"
+
 /**
  * myshell_isnot - A function for non interactive shell
  *
  * Return: void
  */
+
 void myshell_isnot(void)
 {
 	char *line;
@@ -59,7 +58,7 @@ void myshell_isnot(void)
 	int status;
 
 	do {
-		line = get_strem();
+		line = get_stream();
 		args = divide_line(line);
 		status = execute_args(args);
 		free(line);
@@ -69,3 +68,4 @@ void myshell_isnot(void)
 			break;
 
 	} while (status == -1);
+}

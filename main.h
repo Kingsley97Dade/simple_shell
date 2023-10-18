@@ -12,6 +12,7 @@
 #include <limits.h>
 #include <fcntl.h>
 
+/* AUTHORED BY - HENRY DADE AND KINGSLEY*/
 
 /* Interactive Header prototypes*/
 int create_process(char **args);
@@ -20,11 +21,17 @@ char **divide_line(char *line);
 char *scan_line(void);
 void myshell_isnot(void);
 void myshell_works(void);
-int interactive_func(void);
+/*void interactive_func(void);*/
 
 /*string headers*/
 char *strcpy(char *dest, const char *src);
 char *strdup(const char *str);
+int _strcmp(char *fs, char *ss);
+int _strlen(const char *s);
 
+/* Executing Headers*/
+int my_exit(char **args);
+int my_env(char **args);
+int execute_args(char **args);
 
 #endif /* MAIN_H */

@@ -13,21 +13,22 @@ int create_process(char **args)
 	int status;
 
 	pid = fork();
-	if (pid == 0)
+	if (pid < 0)
 	{
-		if (execve(args[0], args) == -1)
-			perror("error in child process cretaion");
-		eixt(EXIT_FAILURE);
+		perror("error in forking new process Id");
+		exit(1);
 	}
-	else if (pid < 0)
+	else if (pid == 0)
 	{
-		perror("error in forking new process");
+		if (execvp(args[0], args) == -1)
+			perror("error in new procees");
+		exit(EXIT_FAILURE);
 	}
 	else
 	{
 		do {
 			waitpid(pid, &status, WUNTRACED);
-		} while (!WIFEXITED(status) && !WIFSIGNALED(status))
+		} while (!WIFEXITED(status) && !WIFSIGNALED(status));
 	}
 
 	return (-1);

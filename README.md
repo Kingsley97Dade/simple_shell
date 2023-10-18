@@ -18,5 +18,3 @@ It should be able to cdhange directory
 It should be able to print working directory
 
 We need to also implement a process ID in shell.
-
-

@@ -13,6 +13,7 @@ char **divide_line(char *line)
 	int x = 0;
 	char **tokens = malloc(bufsize * sizeof(char *));
 	char *token;
+	char *TOK_DELIM = " \t\r\n\a";
 
 	if (!tokens)
 	{
@@ -25,7 +26,7 @@ char **divide_line(char *line)
 	{
 		if (token[0] == '#')
 			break;
-		token[x] = strdup(token);
+		tokens[x] = strdup(token);
 		x++;
 
 		if (x >= bufsize)
@@ -40,7 +41,7 @@ char **divide_line(char *line)
 		}
 		token = strtok(NULL, TOK_DELIM);
 	}
-	token[x] = NULL;
+	tokens[x] = NULL;
 	return (tokens);
 }
 
