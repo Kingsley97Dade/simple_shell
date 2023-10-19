@@ -17,7 +17,6 @@ int main(void)
 }
 
 
-#include "main.h"
 
 /**
  * myshell_works - A function to print a prompt for the shell to work
@@ -43,7 +42,6 @@ void myshell_works(void)
 }
 
 
-#include "main.h"
 
 /**
  * myshell_isnot - A function for non interactive shell

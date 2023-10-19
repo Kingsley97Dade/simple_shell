@@ -38,7 +38,7 @@ int my_env(char **args)
 	while (*env_var)
 	{
 		char *env_str = *env_var;
-		size_t len = _strlen(env_str);
+		size_t len = mycustom_strlen(env_str);
 
 		if (len > 0)
 		{

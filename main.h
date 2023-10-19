@@ -26,8 +26,8 @@ void myshell_works(void);
 /*string headers*/
 char *strcpy(char *dest, const char *src);
 char *strdup(const char *str);
-int _strcmp(char *fs, char *ss);
-int _strlen(const char *s);
+int mycustom_strcmp(char *fs, char *ss);
+int mycustom_strlen(const char *s);
 
 /* Executing Headers*/
 int my_exit(char **args);

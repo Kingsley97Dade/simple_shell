@@ -26,16 +26,16 @@ int execute_args(char **args)
 		return (-1);
 	for (; x < sizeof(builtin_func_list) / sizeof(char *); x++)
 	{
-		if (_strcmp(args[0], builtin_func_list[x]) == 0)
+		if (mycustom_strcmp(args[0], builtin_func_list[x]) == 0)
 		{
 			return ((*builtin_func[x])(args));
 		}
 	}
-	if (_strcmp(args[0], "exit") == 0)
+	if (mycustom_strcmp(args[0], "exit") == 0)
 	{
 		return (my_exit(args));
 	}
-	else if (_strcmp(args[0], "env") == 0)
+	else if (mycustom_strcmp(args[0], "env") == 0)
 	{
 		return (my_env(args));
 	}

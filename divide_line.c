@@ -1,12 +1,10 @@
 #include "main.h"
-
 /**
  * divide_line - A function to divide a string
  * @line: string to be utilised
  *
  * Return: pointer to a new element
  */
-
 char **divide_line(char *line)
 {
 	int bufsize = 64;
@@ -26,12 +24,12 @@ char **divide_line(char *line)
 	{
 		if (token[0] == '#')
 			break;
-		tokens[x] = strdup(token);
+		tokens[x] = token;
 		x++;
 
 		if (x >= bufsize)
 		{
-			bufsize += 64;
+			bufsize += bufsize;
 			tokens = realloc(tokens, bufsize * sizeof(char *));
 			if (!tokens)
 			{
@@ -42,46 +40,6 @@ char **divide_line(char *line)
 		token = strtok(NULL, TOK_DELIM);
 	}
 	tokens[x] = NULL;
+
 	return (tokens);
-}
-
-
-/**
- * *strdup - A function to duplicate a string
- *
- * @str: string to be used
- *
- * Return: new string
- */
-
-char *strdup(const char *str)
-{
-	size_t len = strlen(str) + 1;
-	char *new_str = (char *)malloc(len);
-
-	if (new_str == NULL)
-	{
-		return (NULL);
-	}
-
-	strcpy(new_str, str);
-
-	return (new_str);
-}
-
-/**
- * strcpy - copies a source string to a destination string
- * @dest: the destination string
- * @src: the source string
- *
- * Return: pointer to the beginning of the 'dest' string
- */
-
-char *strcpy(char *dest, const char *src)
-{
-	char *origin_dest = dest;
-
-	while ((*dest++ = *src++) != '\0')
-		;
-	return (origin_dest);
 }
