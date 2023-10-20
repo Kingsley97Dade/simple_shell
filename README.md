@@ -10,4 +10,5 @@
 <ul>Handles Arguments in the other tasks</ul>
 <ul>Exits from the shell</ul>
 <h2>Compilation</h2>
-<p>The shell must be compiled with <b>gcc</b> with the options <b>-Wall -Werror -Wextra -pedantic -std=gnu89</b>
+<p>The shell must be compiled with <b>gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh</b></p>
+<p>Run the code with <b>./hsh</b>executable</p>
