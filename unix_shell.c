@@ -34,7 +34,7 @@ void myshell_works(void)
 		write(STDOUT_FILENO, "kh$ ", 4);
 		line = scan_line();
 		args = divide_line(line);
-		status = execute_args(args);
+		status = exec_arg(args);
 		free(line);
 		free(args);
 
@@ -58,7 +58,7 @@ void myshell_isnot(void)
 	do {
 		line = get_stream();
 		args = divide_line(line);
-		status = execute_args(args);
+		status = exec_arg(args);
 		free(line);
 		free(args);
 

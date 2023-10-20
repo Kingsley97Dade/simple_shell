@@ -40,6 +40,5 @@ char **divide_line(char *line)
 		token = strtok(NULL, TOK_DELIM);
 	}
 	tokens[x] = NULL;
-
 	return (tokens);
 }

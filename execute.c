@@ -2,20 +2,20 @@
 
 
 /**
- * execute_args - A function to excute a programs
+ * exec_arg - A function to excute a programs
  * @args: arugumrnts it takes
  *
  * Return: 0 on fail otherwsie 1 on sucess
  */
 
-int execute_args(char **args)
+int exec_arg(char **args)
 {
-	char *builtin_func_list[] = {
+	char *my_built_list[] = {
 		"env",
 		"exit",
 	};
 
-	int (*builtin_func[])(char **) = {
+	int (*my_built_func[])(char **) = {
 		/*&my_cd,*/
 		&my_env,
 		&my_exit,
@@ -24,11 +24,11 @@ int execute_args(char **args)
 
 	if (args[0] == NULL)
 		return (-1);
-	for (; x < sizeof(builtin_func_list) / sizeof(char *); x++)
+	for (; x < sizeof(my_built_list) / sizeof(char *); x++)
 	{
-		if (mycustom_strcmp(args[0], builtin_func_list[x]) == 0)
+		if (mycustom_strcmp(args[0], my_built_list[x]) == 0)
 		{
-			return ((*builtin_func[x])(args));
+			return ((*my_built_func[x])(args));
 		}
 	}
 	if (mycustom_strcmp(args[0], "exit") == 0)

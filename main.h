@@ -32,6 +32,5 @@ int mycustom_strlen(const char *s);
 /* Executing Headers*/
 int my_exit(char **args);
 int my_env(char **args);
-int execute_args(char **args);
-
+int exec_arg(char **args);
 #endif /* MAIN_H */
